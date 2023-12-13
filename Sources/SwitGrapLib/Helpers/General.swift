@@ -1,0 +1,33 @@
+import Foundation
+
+public func die(_ message: String? = nil, file: String = #file, function: String = #function, line: Int = #line) -> Never {
+    if let message = message {
+        LogError(message, file: file)
+    } else {
+        LogError("Fatal error: \(file):\(line) \(function)")
+    }
+    exit(1)
+}
+
+func Log(_ items: Any..., dim: Bool = false, file: String = #file) {
+    let color = dim ? Colors.dim : ""
+    print(items.reduce(color + logPrefix(file: file)) { $0 + " \($1)" } + Colors.reset)
+}
+
+func LogError(_ items: Any..., file: String = #file) {
+    print(items.reduce(Colors.red + logPrefix(file: file)) { $0 + " \($1)" } + Colors.reset)
+}
+
+func failWithContext<T>(attempt: @autoclosure () throws -> T, context: Any, file: String = #file) throws -> T {
+    do {
+        return try attempt()
+    } catch {
+        LogError("Error context:", String(describing: context), file: file)
+        throw error
+    }
+}
+
+private func logPrefix(file: String) -> String {
+    let name = file.components(separatedBy: "/").last?.replacingOccurrences(of: ".swift", with: "") ?? "???"
+    return "[\(name)]"
+}
