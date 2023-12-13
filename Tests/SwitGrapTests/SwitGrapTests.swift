@@ -1,7 +1,7 @@
 import XCTest
-@testable import SwitGraph
+@testable import SwitGrap
 
-final class SwitGraphTests: XCTestCase {
+final class SwitGrapTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
