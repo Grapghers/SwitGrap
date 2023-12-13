@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "83b23d940471b313427da226196661856f6ba3e0",
+        "version" : "0.4.4"
+      }
+    },
+    {
+      "identity" : "switgrappluginsupport",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swit-graph/SwitGrapPluginSupport",
+      "state" : {
+        "revision" : "1ed495d3be56532ec53df0b59ec0b6642059a155",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
