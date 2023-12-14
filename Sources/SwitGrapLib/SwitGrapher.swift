@@ -1,7 +1,7 @@
 import Foundation
 
 @available(iOS 13.0, *)
-public enum SwitGrapher {
+public enum SwitGrap {
 
     public static func run(with options: SwitGrapherOptions) throws {
         // MARK: - Load the plugin

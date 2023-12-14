@@ -20,7 +20,7 @@ class PluginSupport {
     }
 
     func generateDigraph(target: String, projectSourceFiles: [FileManager.Path]) throws -> Digraph {
-        let digraph = Digraph(name: "XCGrapher")
+        let digraph = Digraph(name: "SwitGrap")
         var nodes: [Any] = []
 
         // MARK: - Main Target
