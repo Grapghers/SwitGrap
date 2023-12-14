@@ -3,7 +3,7 @@ import SwitGrapPluginSupport
 
 // MARK: - Dylib makeXCGrapherPlugin exporting
 
-@_cdecl("makeXCGrapherPlugin")
+@_cdecl("makeSwitGrapherPlugin")
 public func makeXCGrapherPlugin() -> UnsafeMutableRawPointer {
     Unmanaged.passRetained(XCGrapherModuleImportPlugin()).toOpaque()
 }

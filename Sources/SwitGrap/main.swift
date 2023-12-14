@@ -1,10 +1,10 @@
 import Foundation
 import SwitGrapLib
 
-let options = SwitGrapherArguments.parseOrExit()
+let options = SwitGrapArguments.parseOrExit()
 
 do {
-    try SwitGrapher.run(with: options)
+    try SwitGrap.run(with: options)
 } catch {
     die(error.localizedDescription)
 }

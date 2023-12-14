@@ -28,7 +28,7 @@ enum PluginLoader {
 
         defer { dlclose(openResult) }
 
-        let symbolName = "makeXCGrapherPlugin"
+        let symbolName = "makeSwitGrapherPlugin"
         let sym = dlsym(openResult, symbolName)
 
         guard sym != nil else { throw LoadError.symbolNotFound(symbol: symbolName) }

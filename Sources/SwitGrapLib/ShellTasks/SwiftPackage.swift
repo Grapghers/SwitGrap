@@ -22,5 +22,4 @@ extension SwiftPackage: ShellTask {
     var commandNotFoundInstructions: String {
         "Missing command 'swift'"
     }
-
 }
