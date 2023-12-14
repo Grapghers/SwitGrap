@@ -2,10 +2,10 @@ import ArgumentParser
 import Foundation
 import SwitGrapLib
 
-typealias SwitGrapherArguments = switgrapher
+typealias SwitGrapArguments = switgrap
 
 /// Needs this name for `ParsableArguments`'s help text to be correct
-struct switgrapher: ParsableArguments {
+struct switgrap: ParsableArguments {
 
     @Option(name: .long, help: "The path to the .xcodeproj")
     public var project: String?
@@ -22,7 +22,7 @@ struct switgrapher: ParsableArguments {
     @Option(name: .shortAndLong, help: "The path to which the output PNG should be written")
     public var output: String = "/tmp/xcgrapher.png"
 
-    @Option(name: .long, help: "The path to an XCGrapherPlugin-conforming dylib. Passing this option will override xcgrapher's default behaviour and use the plugin for consolidating the node tree instead.")
+    @Option(name: .long, help: "The path to an SwitGrapherPlugin-conforming dylib. Passing this option will override xcgrapher's default behaviour and use the plugin for consolidating the node tree instead.")
     public var plugin: String = "DEFAULT_PLUGIN_LOCATION" // If you're getting an error here run `make configure` to generate DEFAULT_PLUGIN_LOCATION
 
     @Flag(name: .long, help: "Include Apple frameworks in the graph (for --target and readable-source --spm packages)")
@@ -69,4 +69,4 @@ struct switgrapher: ParsableArguments {
 
 }
 
-extension SwitGrapherArguments: SwitGrapherOptions {}
+extension SwitGrapArguments: SwitGrapherOptions {}
